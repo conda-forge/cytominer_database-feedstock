@@ -10,7 +10,7 @@ source:
   sha256: 9e16bfe3f635e65d8725232f213a046fedda46f78b5b330fb2e33563eebff685
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - cytominer-database=cytominer_database.command:command
@@ -19,7 +19,6 @@ build:
 requirements:
   host:
     - python >=3.4
-    - backports.tempfile >=1.0rc1
     - click >=6.7
     - configparser >=3.5.0
     - csvkit >=1.0.2
@@ -29,7 +28,6 @@ requirements:
     - setuptools
   run:
     - python >=3.4
-    - backports.tempfile >=1.0rc1
     - click >=6.7
     - configparser >=3.5.0
     - csvkit >=1.0.2
