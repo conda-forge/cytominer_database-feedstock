@@ -1,5 +1,5 @@
 {% set name = "cytominer_database" %}
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9e16bfe3f635e65d8725232f213a046fedda46f78b5b330fb2e33563eebff685
+  sha256: 9dfd1e5c49d085656ce32e716a6d8e95b2b3418433e75aefae4662f1ca7da6ec
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - cytominer-database=cytominer_database.command:command
