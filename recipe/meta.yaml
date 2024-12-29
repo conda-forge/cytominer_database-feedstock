@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9dfd1e5c49d085656ce32e716a6d8e95b2b3418433e75aefae4662f1ca7da6ec
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - cytominer-database=cytominer_database.command:command
@@ -18,24 +18,26 @@ build:
 
 requirements:
   host:
-    - python >=3.4
+    - python {{ python_min }}
     - click >=6.7
     - configparser >=3.5.0
     - csvkit >=1.0.2
     - pandas >=0.20.3
     - pip
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - click >=6.7
     - configparser >=3.5.0
     - csvkit >=1.0.2
     - pandas >=0.20.3
-    - python
+    - python >={{ python_min }}
     - setuptools
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - cytominer_database
     - cytominer_database.commands
